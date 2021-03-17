@@ -9,3 +9,7 @@ https://pokeapi.co/docs/v2#resource-listspagination-section
 1. Download Codebase
 2. npm install (to install node_modules/depndencies)
 3. npm start (to run the angular server)
+
+
+# Live App
+https://pokemon-angular-app.herokuapp.com/
