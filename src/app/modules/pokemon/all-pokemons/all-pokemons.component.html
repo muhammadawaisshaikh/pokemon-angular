@@ -7,7 +7,7 @@
                   <h5 class="card-title text-capitalize">{{pokemon.name}}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Height: <b>{{pokemon.height}}</b></h6>
                   <span class="badge badge-pill badge-success" *ngFor="let item of pokemon.types">{{item.type.name}}</span>
-                  <a href="#" class="card-link d-block mt-2">Analyze Evolving</a>
+                  <a routerLink="/pokemon/pokemon-evolves" [state]="{ data: pokemon }" class="card-link d-block mt-2">Analyze Evolving</a>
                 </div>
               </div>
         </div>

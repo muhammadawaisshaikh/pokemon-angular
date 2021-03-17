@@ -19,4 +19,8 @@ export class PokemonService {
     return this.http.get(url);
   }
 
+  getPokemonEvolution(id) {
+    return this.http.get(`${environment.API_BASE_URL}/v2/evolution-chain/${id}`);
+  }
+
 }

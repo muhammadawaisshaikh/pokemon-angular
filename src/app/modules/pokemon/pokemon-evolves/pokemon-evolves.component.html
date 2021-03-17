@@ -1,1 +1,53 @@
-<p>pokemon-evolves works!</p>
+<div class="container py-5">
+    <a class="badge badge-pill badge-light" (click)="backClicked()"><i class="fas fa-chevron-left pr-3"></i> Back</a>
+    <h3 class="pt-4">
+        Parent Pokemon
+    </h3>
+    <div class="row">
+        <div class="col-3 mt-4">
+            <div class="card">
+                <img class="card-img-top" src="{{data.img}}" alt="img">
+                <div class="card-body">
+                    <h5 class="card-title text-capitalize">{{data.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Height: <b>{{data.height}}</b></h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Weight: <b>{{data.weight}}</b></h6>
+                    <p class="text-muted">Base Experience: <b>{{data.base_experience}}</b></p>
+                    <span class="badge badge-pill badge-success" *ngFor="let item of data.types">{{item.type.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-9 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-capitalize">Abilities</h5>
+                    <span class="badge badge-pill badge-primary" *ngFor="let item of data.abilities">{{item.ability.name}}</span>
+                    <hr>
+                    <h5 class="card-title text-capitalize">Moves</h5>
+                    <span class="badge badge-pill badge-warning" *ngFor="let item of data.moves">{{item.move.name}}</span>
+                    <hr>
+                    <h5 class="card-title text-capitalize">Game Indices</h5>
+                    <span class="badge badge-pill badge-info" *ngFor="let item of data.game_indices">{{item.version.name}}</span>
+                    <hr>
+                    <h5 class="card-title text-capitalize">Stats</h5>
+                    <span class="badge badge-pill badge-danger" *ngFor="let item of data.stats">{{item.stat.name}}: {{item.base_stat}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="pt-4">List of Pokemon Evolves</h3>
+    <div class="row">
+        <div class="col-3 mt-4" *ngFor="let pokemon of pokemons">
+            <div class="card">
+                <img class="card-img-top" src="{{pokemon.img}}" alt="img">
+                <div class="card-body">
+                  <h5 class="card-title text-capitalize">{{pokemon.name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Shape: <b class="badge badge-pill badge-info">{{pokemon.shape.name}}</b></h6>
+                  <h6 class="card-subtitle mb-2 text-muted">Capture Rate: <b class="badge badge-pill badge-warning">{{pokemon.capture_rate}}</b></h6>
+                  <h6 class="card-subtitle mb-2 text-muted">Base Hapiness: <b class="badge badge-pill badge-success">{{pokemon.base_happiness}}</b></h6>
+                  <span class="badge badge-pill badge-success" *ngFor="let item of pokemon.types">{{item.type.name}}</span>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

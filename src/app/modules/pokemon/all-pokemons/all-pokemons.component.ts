@@ -32,9 +32,6 @@ export class AllPokemonsComponent implements OnInit {
         });
       }
     })
-
-    console.log(this.pokemons);
-    
   }
 
 }
